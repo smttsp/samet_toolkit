@@ -1,11 +1,17 @@
 [tool.poetry]
-name = "example_template"
+name = "samet_toolkit"
 version = "0.1.0"
-description = "This is a template example for python packages"
+description = "This is a toolkit python packages for Samet's projects."
 authors = ["samet <samettaspinarx@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.10, <3.13"
+langchain-google-vertexai = "^2.0.9"
+langchain-openai = "^0.2.14"
+langchain-nvidia-ai-endpoints = "^0.3.7"
+omegaconf = "^2.3.0"
+cohere = "^5.13.4"
+voyageai = "^0.3.2"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.3"

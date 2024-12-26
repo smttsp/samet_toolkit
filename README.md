@@ -1,7 +1,17 @@
-# samet_tamplate
+# samet_toolkit
 
-This repo is for template for my projects.
+This repo is a toolkit for my personal and professional projects. 
+It contains the following tools (and will expand).
 
+1. LLM
+    - Embedding generator 
+    - Text File Parser: .pdf, .txt, .docx for now
+    -  
+2. Database operations
+    - Supabase
+    - Pinecone
+    - Firebase
+3. 
 
 ## Installation - Mac
 
@@ -65,41 +75,32 @@ poetry install
 
 ## Installation - Windows
 
+### Creating Python Environment
+
 The installation on Windows can be done with conda. 
 
-1. The first step is to download a miniconda installer from the following link:
+The first step is to download a miniconda installer from the following link:
 
 https://docs.conda.io/en/latest/miniconda.html
 
-2. Once it is installed and conda is available in the command prompt, you can create a new environment with the following command:
+Once it is installed and conda is available in the command prompt, you can create a 
+new environment with the following command:
 
 ```bash 
-conda create -n sttr python=3.11.5
+conda create -n new_environment python=3.11.5
 ```
 
-3. Activate the environment with the following command:
+Activate the environment with the following command:
 
 ```bash
-conda activate sttr
+conda activate new_environment
 ```
 
+### Installing Dependencies
 
-4. Install the dependencies with the following command:
+Install the dependencies with the following command:
 
 ```bash
 pip install poetry
 poetry install --no-root
 ```
-
-
-## Running the Application
-
-To run the application, you need to run the following command:
-
-```bash
-python main.py
-```
-
-which will run GUI for the application. You can upload the image which will automatically 
-trigger the backend and do the processing. The resulting BOM will then be displayed on
-the screen.
