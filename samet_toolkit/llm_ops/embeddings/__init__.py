@@ -19,13 +19,10 @@ class Providers(str, Enum):
 
 
 class BaseEmbeddingGenerator:
-    def __init__(
-        self, texts: str | list, model_name: str, config=None, client=None, **kwargs
-    ):
+    def __init__(self, texts: str | list, model_name: str, config: "Config", **kwargs):
         self.texts = texts if isinstance(texts, list) else [texts]
         self.model_name = model_name
-        self.config = config or get_config()
-        self.client = None
+        self.config = config
         self.params = kwargs
 
     def generate_embeddings(self) -> list[list[float] | None] | list[float] | None:

@@ -11,11 +11,11 @@ class EmbeddingGeneratorOpenAI(BaseEmbeddingGenerator):
         self,
         texts: str | list,
         model_name: str,
-        client: OpenAIEmbeddings | None = None,
         config=None,
+        client: OpenAIEmbeddings | None = None,
         **kwargs,
     ):
-        super().__init__(texts, model_name, config, client, **kwargs)
+        super().__init__(texts, model_name, config, **kwargs)
         self.client = self._get_embedding_client(client)
 
     def generate_embeddings(self) -> list[list[float]] | None:

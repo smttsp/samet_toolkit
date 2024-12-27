@@ -22,23 +22,23 @@ class EmbeddingGenerator(BaseEmbeddingGenerator):
 
         if provider == Providers.OPENAI:
             emb_generator_obj = EmbeddingGeneratorOpenAI(
-                self.texts, self.model_name, **self.params
+                self.texts, self.model_name, self.config, **self.params
             )
         elif provider == Providers.VOYAGEAI:
             emb_generator_obj = EmbeddingGeneratorVoyage(
-                self.texts, self.model_name, **self.params
+                self.texts, self.model_name, self.config, **self.params
             )
         elif provider == Providers.COHERE:
             emb_generator_obj = EmbeddingGeneratorCohere(
-                self.texts, self.model_name, **self.params
+                self.texts, self.model_name, self.config, **self.params
             )
         elif provider == Providers.NVIDIA:
             emb_generator_obj = EmbeddingGeneratorNvidia(
-                self.texts, self.model_name, **self.params
+                self.texts, self.model_name, self.config, **self.params
             )
         elif provider == Providers.VERTEXAI:
             emb_generator_obj = EmbeddingGeneratorVertexAI(
-                self.texts, self.model_name, **self.params
+                self.texts, self.model_name, self.config, **self.params
             )
         else:
             raise ValueError(f"Unsupported model: {self.model_name}")

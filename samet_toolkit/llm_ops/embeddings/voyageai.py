@@ -10,11 +10,11 @@ class EmbeddingGeneratorVoyage(BaseEmbeddingGenerator):
         self,
         texts: list[str] | str,
         model_name: str,
-        client: voyageai.Client | None = None,
         config=None,
+        client: voyageai.Client | None = None,
         **kwargs,
     ):
-        super().__init__(texts, model_name, client, config, **kwargs)
+        super().__init__(texts, model_name, config, **kwargs)
         self.client = self._get_embedding_client(client)
         self.input_type = self._detect_input_type()
 

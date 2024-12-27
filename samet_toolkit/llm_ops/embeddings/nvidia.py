@@ -8,11 +8,11 @@ class EmbeddingGeneratorNvidia(BaseEmbeddingGenerator):
         self,
         texts: list[str] | str,
         model_name: str,
-        client=None,
-        config: NVIDIAEmbeddings | None = None,
+        config=None,
+        client: NVIDIAEmbeddings | None = None,
         **kwargs,
     ):
-        super().__init__(texts, model_name, client, config, **kwargs)
+        super().__init__(texts, model_name, config, **kwargs)
         self.client = self._get_embedding_client(client)
 
     def generate_embeddings(self, max_batch=MAX_BATCH_SIZE) -> list[list[float]]:
