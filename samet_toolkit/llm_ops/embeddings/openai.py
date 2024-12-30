@@ -1,9 +1,7 @@
+from samet_toolkit.llm_ops.embeddings import BaseEmbeddingGenerator
 from langchain_openai import OpenAIEmbeddings
-from concurrent.futures import ThreadPoolExecutor
-from samet_toolkit.llm_ops.embeddings import (
-    BaseEmbeddingGenerator,
-    logger,
-)
+
+from samet_toolkit.utils import logger
 
 
 class EmbeddingGeneratorOpenAI(BaseEmbeddingGenerator):
