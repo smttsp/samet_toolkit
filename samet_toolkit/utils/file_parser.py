@@ -121,7 +121,7 @@ class SegmentCombiner:
         return merge_candidates
 
 
-class SegmentMergerProcessor:
+class SegmentMerger:
     def __init__(self, config, raw_segments: list[str]):
         self.config = config
         self.raw_segments = raw_segments

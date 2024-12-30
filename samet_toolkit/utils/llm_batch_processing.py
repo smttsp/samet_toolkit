@@ -59,7 +59,7 @@ class BatchProcessingUtility:
             > utility = BatchProcessingUtility()
             > result = utility.batch_process_with_retry(chain, all_inputs, EdgeList)
         """
-        provider = LLMFinder.find_provider_from_name(llm_name)
+        provider = LLMFinder._find_provider_from_name(llm_name)
         bp = BatchProcessing(provider=provider)
 
         all_res_dict = {}

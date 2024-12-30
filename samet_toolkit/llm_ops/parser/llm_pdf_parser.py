@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 from samet_toolkit.utils.llm_batch_processing import BatchProcessingUtility
 from samet_toolkit.utils.llm_finder import LLMFinder
-from samet_toolkit.utils.file_parser import SegmentMergerProcessor
+from samet_toolkit.utils.file_parser import SegmentMerger
 
 
 class Segment(BaseModel):
@@ -45,7 +45,7 @@ class DocumentChunker:
 
         all_page_segments = self._filter_empty_content(all_page_segments)
         all_segments = self._flatten_segments(all_page_segments)
-        smp_obj = SegmentMergerProcessor(self.config, all_segments)
+        smp_obj = SegmentMerger(self.config, all_segments)
         all_combined_segments = smp_obj.process()
         return all_combined_segments
 
