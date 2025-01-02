@@ -15,16 +15,16 @@ from samet_toolkit.utils import Providers
 from samet_toolkit.utils.llm_finder import LLMFinder
 
 
+# Define a generic type for the Pydantic model
+T = TypeVar("T", bound=BaseModel)
+MAX_RETRY = 3
+
+
 class ContextExecutor(ThreadPoolExecutor):
     def submit(self, fn: Callable, *args, **kwargs) -> Future:
         ctx = contextvars.copy_context()
 
         return super().submit(partial(ctx.run, partial(fn, *args, **kwargs)))
-
-
-# Define a generic type for the Pydantic model
-T = TypeVar("T", bound=BaseModel)
-MAX_RETRY = 3
 
 
 class BatchProcessingUtility:
@@ -59,7 +59,7 @@ class BatchProcessingUtility:
             > utility = BatchProcessingUtility()
             > result = utility.batch_process_with_retry(chain, all_inputs, EdgeList)
         """
-        provider = LLMFinder._find_provider_from_name(llm_name)
+        provider = LLMFinder.find_provider_from_name(llm_name)
         bp = BatchProcessing(provider=provider)
 
         all_res_dict = {}
